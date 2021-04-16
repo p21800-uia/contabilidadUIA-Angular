@@ -1,0 +1,13 @@
+<div *ngIf="proveedor">  
+    <h2>{{proveedor.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{proveedor.id}}</div>
+    <div>
+      <label for="proveedor-name">Nombre del Proveedor: </label>
+      <input id="proveedor-name" [(ngModel)]="proveedor.name" placeholder="name">
+    </div>
+    <div>
+      <label for="proveedor-id">Id Proveedor: </label>
+      <input id="proveedor-id" [(ngModel)]="proveedor.id" placeholder="id">
+    </div>   
+</div>
+

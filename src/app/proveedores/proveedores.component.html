@@ -1,0 +1,19 @@
+<ul class="proveedores">
+  <li *ngFor="let proveedor of proveedores"
+    [class.selected]="proveedor === selectedProveedor"  (click)="onSelect(proveedor)">
+    <span class="badge">{{proveedor.id}}</span> {{proveedor.name}}
+  </li>
+</ul>
+  
+<app-proveedor-detalle [proveedor]="selectedProveedor"></app-proveedor-detalle>
+
+<div>
+  <label id="new-proveedor">Nombre del Proveedor: </label>
+  <input for="new-proveedor" #proveedorName />
+  <input for="new-proveedor" #proveedorId />
+   <!-- (click) passes input value to agregar() and then clears the input -->
+   <button class="add-button" (click)="agregar(proveedorName.value, proveedorId.value ); proveedorName.value=''; proveedorId.value=''  " >
+  Agregue un proveedor
+</button>
+</div>
+
