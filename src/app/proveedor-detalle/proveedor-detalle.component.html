@@ -1,10 +1,12 @@
 <div *ngIf="proveedor">  
-    <h2>{{proveedor.name | uppercase}} Details</h2>
+    <h2>Edición de {{proveedor.name | uppercase}}</h2>
     <div><span>id: </span>{{proveedor.id}}</div>
-    <div>
-      <label for="proveedor-name">Nombre del Proveedor: </label>
-      <input id="proveedor-name" [(ngModel)]="proveedor.name" placeholder="name">
-    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del Proveedor:</mat-label>
+      <input matInput id="proveedor-name" [(ngModel)]="proveedor.name" placeholder="name">
+    </mat-form-field>
+
     <div>
       <label for="proveedor-id">Id Proveedor: </label>
       <input id="proveedor-id" [(ngModel)]="proveedor.id" placeholder="id">
